@@ -31,10 +31,20 @@ func main() {
 
 	fmt.Println(intARR3)
 
-	//Slices son envoltorios para arrays pero con mas funcionalidades.
+	//Slices son referencias a las arrays pero no guardan la informacion.
 
-	intSlice := [3]int32{4, 5, 6}
+	slice := intARR3[0:3] //He creado un slice con los valores del 0 al 3  (1 2 3)
 
-	intSlice = append(intSlice, 7)
+	fmt.Println(slice) //1 2 3
+
+	//Ejemplo de declaracion de un Map
+
+	var myMap map[string]uint8 = make(map[string]uint8)
+	fmt.Println(myMap)
+
+	var myMap2 = map[string]uint8{"Ronald":16,"Frank":15}
+	fmt.Println(myMap2["Ronald"]) //16
+	fmt.Println(myMap2)
+	
 
 }
