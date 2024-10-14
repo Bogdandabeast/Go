@@ -1,9 +1,11 @@
 package main
 
-import "fmt"
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
-func  main()  {
+func main() {
 
 	//Ejecucion async go. Se hace un fork del main y se crearan 3 otros main llamados children.
 
@@ -13,13 +15,10 @@ func  main()  {
 
 	//Pongo a dormir el hilo main para que a los hijos les de tiempo a acabar
 
-	time.Sleep(time.Second * 2) 
-
-	
+	time.Sleep(time.Second * 2)
 
 	fmt.Println("hola mundo")
 
-	
 }
 
 func someFunc(num string) {

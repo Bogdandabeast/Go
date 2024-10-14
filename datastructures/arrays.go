@@ -42,9 +42,8 @@ func main() {
 	var myMap map[string]uint8 = make(map[string]uint8)
 	fmt.Println(myMap)
 
-	var myMap2 = map[string]uint8{"Ronald":16,"Frank":15}
+	var myMap2 = map[string]uint8{"Ronald": 16, "Frank": 15}
 	fmt.Println(myMap2["Ronald"]) //16
 	fmt.Println(myMap2)
-	
 
 }
