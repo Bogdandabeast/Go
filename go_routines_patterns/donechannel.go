@@ -7,7 +7,7 @@ func main() {
 
 	//canal done.
 
-	done :=  make(chan bool)
+	done := make(chan bool)
 
 	go doWork(done)
 
@@ -15,20 +15,18 @@ func main() {
 
 	time.Sleep(time.Second * 3)
 
-
-
-	
-
 }
 
 //la funcion recibe el canal done
 
-func doWork(done <- chan bool) {
+func doWork(done <-chan bool) {
 	for {
 		select {
-			//el caso que hace que la funcion termine
-		case <- done: return
-		default: fmt.Println("Haciendo trabajo")
+		//el caso que hace que la funcion termine
+		case <-done:
+			return
+		default:
+			fmt.Println("Haciendo trabajo")
 		}
 	}
 }

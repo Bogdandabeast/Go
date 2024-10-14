@@ -22,24 +22,18 @@ func main() {
 		anotherChannel <- "datos para el segundo canal"
 	}()
 
-
-
 	//fork child se reune con el main
 
-	/* msg := <- myChannel */ 
+	/* msg := <- myChannel */
 
 	select {
-	case msgFromMyChannel := <- myChannel: fmt.Println(msgFromMyChannel)
+	case msgFromMyChannel := <-myChannel:
+		fmt.Println(msgFromMyChannel)
 
-	case msgFromAnotherChannel := <- anotherChannel: fmt.Println(msgFromAnotherChannel)
+	case msgFromAnotherChannel := <-anotherChannel:
+		fmt.Println(msgFromAnotherChannel)
 	}
 
-
-
 	/* fmt.Println(msg) */
-
-
-
-
 
 }
